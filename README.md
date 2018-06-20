@@ -29,7 +29,7 @@ You will not be able to run this yourself. Private information (like credentials
 	
 	`messageFilter = nacre.handle.newMessageFilter('^{}+`<b>`COMMAND`</b>`(\s.*)?$'.format(self.pearl.config['format']))`
 	
-	Replace `COMMAND` with your command, so in this example replace with "killallhumans". Change the class name from `CommandSession` to `KillAllHumansSession`, and at the bottom replace ` return CommandSession(pearl, config)` with ` return KillAllHumansSession(pearl, config)`
+	Replace <b>`COMMAND`</b> with your command, so in this example replace with <b>killallhumans</b>. Change the class name from `CommandSession` to `KillAllHumansSession`, and at the bottom replace ` return CommandSession(pearl, config)` with ` return KillAllHumansSession(pearl, config)`
 
 	
 * 4. Changing message:
@@ -40,7 +40,7 @@ You will not be able to run this yourself. Private information (like credentials
 	
 	change what the message is equal to, like in this example: 
 	
-	`message = 'I want to kill all humans!'`
+	`message = `<b>`'I want to kill all humans!'`</b>
 	
 	(NOTE: the message string is processed into HTML, so you can add commands like `<br>, <b>, <i>, <u>,` etc. to format the message accordingly)
 	
