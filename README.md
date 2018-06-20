@@ -1,7 +1,10 @@
-# mra-server-python
+# arpadav/mra-server-python
 Mathakan Red Alert: Server-end Python Script
 
-# Chat-bot instructions:
+# Notice
+You will not be able to run this yourself. Private information (like credentials, auth tokens, conversation id's, usernames, and passwords) are missing and stored locally on my computer. This is just to prevent others from gaining access to MRA's Google Account.
+
+# Adding commands to chat-bot instructions:
 * #1. Plugins folder
 	
 	In order to add commands to the chat-bot for Mathakan, navigate your way to `./plugins` where you can see all the other commands.
@@ -30,6 +33,7 @@ Mathakan Red Alert: Server-end Python Script
 
 	
 * #4. Changing message:
+	
 	Now inside of:
 	
 	`async def respond(self, event):` 
@@ -37,6 +41,8 @@ Mathakan Red Alert: Server-end Python Script
 	change what the message is equal to, like in this example: 
 	
 	`message = 'I want to kill all humans!'`
+	
+	(NOTE: the message string is processed into HTML, so you can add commands like <br>, <b>, <i>, <u>, etc. to format the message accordingly)
 	
 	
 * #5. Configuring your new command:
@@ -59,7 +65,20 @@ Mathakan Red Alert: Server-end Python Script
 * #6. Pushing:
 	
 	Push the project back here, let me know, and I will pull and restart the server. If you followed all steps completely, the command should work!
-	
-# Notice
 
-In here I have a couple files, like `client_secret.json` and `credentials.json`/`credentials0.json`. These are vital and PRIVATE for the script to access the Mathakan Hangouts group chat. Should I remove them off of GitHub so no-one else can somehow use them? I don't think it should be a problem since they still need to validate using Oath2Client, but still. I can remove them if ya'll want.
+# Changing MRA APP notifications
+* send.py
+
+	`send.py` is the Python script which runs both the chat-bot and the MRA app notifications asynchronously. Ignore everything other than the following:
+	
+	** variable called `multiline`
+	
+		This is the actual message that is sent to the Mathakan Hangouts. It can be formatted with HTML, so feel free to bold, underline, etc. For some reason hyperlinks can not be embedded with `<a href="url.com">Link to url.com</a>`. Just send the raw URL and it will auto-convert to a hyperlink.
+	
+	** function called `randoMes()`
+	
+		This is the random pop-up message that generated for `multiline` to send to the Mathakan Hangouts. Feel free to add more emojis and messages of your liking.
+		
+	** function called `randoEmoji(type)`
+		
+		This is a function which returns a random emoji from different lists. If we add a lot of arrays of emojis, we can add a switch statement instead of a bunch of elseifs.
