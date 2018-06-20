@@ -4,7 +4,7 @@ Mathakan Red Alert: Server-end Python Script
 # Notice
 You will not be able to run this yourself. Private information (like credentials, auth tokens, conversation id's, usernames, and passwords) are missing and stored locally on my computer. This is just to prevent others from gaining access to MRA's Google Account.
 
-# Adding commands to chat-bot instructions:
+# Adding commands to chat-bot
 * 1. Plugins folder
 	
 	In order to add commands to the chat-bot for Mathakan, navigate your way to `./plugins` where you can see all the other commands.
