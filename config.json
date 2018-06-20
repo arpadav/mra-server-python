@@ -1,0 +1,51 @@
+{
+	"auth": "private/auth.json",
+	"format": "!",
+	"plugins": {
+		"8ball": {
+			"path": "plugins/eightball.py"
+		},
+		"begone": {
+			"path": "plugins/begone.py"
+		},
+		"git": {
+			"path": "plugins/git.py"
+		},
+		"goodbye": {
+			"path": "plugins/goodbye.py"
+		},
+		"hello": {
+			"path": "plugins/hello.py"
+		},
+		"haines": {
+			"path": "plugins/haines.py"
+		},
+		"help": {
+			"path": "plugins/help.py",
+			"commands": {
+				"8ball": "Fortunes and advice",
+				"copypastas": "Lists copypasta commands",
+				"hello": "MRA greets you!",
+				"help": "Usage and command list",
+				"goodbye": "MRA says goodbye"
+			}
+		},
+		"him": {
+			"path": "plugins/him.py"
+		},
+		"tragedy": {
+			"path": "plugins/tragedy.py"
+		},
+		"uptime": {
+			"path": "plugins/uptime.py"
+		},
+		"copypastas": {
+			"path": "plugins/copypastas.py",
+			"commands": {
+				"tragedy": "",
+				"him": "",
+				"begone": ""
+			}
+		}
+	}
+}
