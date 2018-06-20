@@ -27,7 +27,7 @@ You will not be able to run this yourself. Private information (like credentials
 	
 	Inside your new `.py` file, find the following line of code in `def buildHandle(self)`:
 	
-	`messageFilter = nacre.handle.newMessageFilter('^{}+COMMAND(\s.*)?$'.format(self.pearl.config['format']))`
+	`messageFilter = nacre.handle.newMessageFilter('^{}+`<b>`COMMAND`</b>`(\s.*)?$'.format(self.pearl.config['format']))`
 	
 	Replace `COMMAND` with your command, so in this example replace with "killallhumans". Change the class name from `CommandSession` to `KillAllHumansSession`, and at the bottom replace ` return CommandSession(pearl, config)` with ` return KillAllHumansSession(pearl, config)`
 
