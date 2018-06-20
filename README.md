@@ -42,7 +42,7 @@ You will not be able to run this yourself. Private information (like credentials
 	
 	`message = 'I want to kill all humans!'`
 	
-	(NOTE: the message string is processed into HTML, so you can add commands like <br>, <b>, <i>, <u>, etc. to format the message accordingly)
+	(NOTE: the message string is processed into HTML, so you can add commands like `<br>, <b>, <i>, <u>,` etc. to format the message accordingly)
 	
 	
 * #5. Configuring your new command:
@@ -71,14 +71,14 @@ You will not be able to run this yourself. Private information (like credentials
 
 	`send.py` is the Python script which runs both the chat-bot and the MRA app notifications asynchronously. Ignore everything other than the following:
 	
-	** variable called `multiline`
+	* variable called `multiline`
 	
-		This is the actual message that is sent to the Mathakan Hangouts. It can be formatted with HTML, so feel free to bold, underline, etc. For some reason hyperlinks can not be embedded with `<a href="url.com">Link to url.com</a>`. Just send the raw URL and it will auto-convert to a hyperlink.
+	This is the actual message that is sent to the Mathakan Hangouts. It can be formatted with HTML, so feel free to bold, underline, etc. For some reason hyperlinks can not be embedded with `<a href="url.com">Link to url.com</a>`. Just send the raw URL and it will auto-convert to a hyperlink.
 	
-	** function called `randoMes()`
+	* function called `randoMes()`
 	
-		This is the random pop-up message that generated for `multiline` to send to the Mathakan Hangouts. Feel free to add more emojis and messages of your liking.
+	This is the random pop-up message that generated for `multiline` to send to the Mathakan Hangouts. Feel free to add more emojis and messages of your liking.
 		
-	** function called `randoEmoji(type)`
+	* function called `randoEmoji(type)`
 		
-		This is a function which returns a random emoji from different lists. If we add a lot of arrays of emojis, we can add a switch statement instead of a bunch of elseifs.
+	This is a function which returns a random emoji from different lists. If we add a lot of arrays of emojis, we can add a switch statement instead of a bunch of elseifs.
