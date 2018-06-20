@@ -5,9 +5,9 @@
 		"8ball": {
 			"path": "plugins/eightball.py"
 		},
-        "ashley": {
-            "path": "plugins/ashley.py"
-        },
+    "ashley": {
+      "path": "plugins/ashley.py"
+    },
 		"begone": {
 			"path": "plugins/begone.py"
 		},
@@ -44,7 +44,7 @@
 			"path": "plugins/help.py",
 			"commands": {
 				"8ball": "Fortunes and advice",
-                "ashley": "Returns the fire emoji to its rightful owner",
+        "ashley": "Returns the fire emoji to its rightful owner",
 				"copypastas": "Lists copypasta commands",
 				"git": "Displays link to GitHub",
 				"goodbye": "MRA says goodbye",
