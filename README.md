@@ -72,7 +72,7 @@ You will not be able to run this yourself. Private information (like credentials
 
 	`send.py` is the Python script which runs both the chat-bot and the MRA app notifications asynchronously. Ignore everything other than the following:
 	
-	* variable called `multiline`
+	* string called `multiline`
 	
 	This is the actual message that is sent to the Mathakan Hangouts. It can be formatted with HTML, so feel free to bold, underline, etc. For some reason hyperlinks can not be embedded with `<a href="url.com">Link to url.com</a>`. Just send the raw URL and it will auto-convert to a hyperlink.
 	
