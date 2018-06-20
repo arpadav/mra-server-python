@@ -20,16 +20,6 @@
 		"haines": {
 			"path": "plugins/haines.py"
 		},
-		"help": {
-			"path": "plugins/help.py",
-			"commands": {
-				"8ball": "Fortunes and advice",
-				"copypastas": "Lists copypasta commands",
-				"hello": "MRA greets you!",
-				"help": "Usage and command list",
-				"goodbye": "MRA says goodbye"
-			}
-		},
 		"him": {
 			"path": "plugins/him.py"
 		},
@@ -45,6 +35,19 @@
 				"tragedy": "",
 				"him": "",
 				"begone": ""
+			}
+		},
+		"help": {
+			"path": "plugins/help.py",
+			"commands": {
+				"8ball": "Fortunes and advice",
+				"copypastas": "Lists copypasta commands",
+				"git": "Displays link to GitHub",
+				"goodbye": "MRA says goodbye",
+				"hello": "MRA greets you!",
+				"help": "Usage and command list",
+				"haines": "Quote from Adam Haines",
+				"uptime": "Uptime of server"
 			}
 		}
 	}
