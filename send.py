@@ -8,11 +8,10 @@ import pearl, hangups
 import random, time, asyncio
 
 
-CONVERSATION_ID = ''
-REFRESH_TOKEN_PATH = ''
+CONVERSATION_ID = ''#mathakan: '' calibrating: ''
+REFRESH_TOKEN_PATH = '.txt'
 SPREADSHEET_ID = ''
 VALID_EMAILS = ['']
-
 BODY = {
     "requests": [{
         "deleteDimension": {
@@ -26,15 +25,20 @@ BODY = {
 }
 
 @asyncio.coroutine
-def send_message(hclient, MESSAGE):
+def send_message(hclient, MESSAGE, calib):
     annotationType = 4
+    if calib:
+        cid = ''
+    else:
+        cid = CONVERSATION_ID
+
     segments = hangups.ChatMessageSegment.from_str(MESSAGE)
 
     request = hangups.hangouts_pb2.SendChatMessageRequest(
         request_header=hclient.get_request_header(),
         event_request_header=hangups.hangouts_pb2.EventRequestHeader(
             conversation_id=hangups.hangouts_pb2.ConversationId(
-                id=CONVERSATION_ID
+                id=cid
             ),
             client_generated_id=hclient.get_client_generated_id(),
         ),
@@ -46,7 +50,6 @@ def send_message(hclient, MESSAGE):
             type=annotationType
         )]
     )
-
     yield from hclient.send_chat_message(request)
     yield from hclient.disconnect()
 
@@ -58,18 +61,19 @@ def chatbot():
     pearl.main()
 
 def mraapp():
+    Gmail = getAPI('https://www.googleapis.com/auth/gmail.readonly', '.json', '.json', 'gmail')
+    ss = getAPI('https://www.googleapis.com/auth/spreadsheets', '.json', '.json', 'ss')
+    watchReq = {
+      'labelIds': ['UNREAD'],
+      'topicName': ''
+    }
+    historyId2 = 'updated in conditional statement' #previous int(id['historyId'])
     while True:
-        Gmail = getAPI('https://www.googleapis.com/auth/gmail.readonly', '.json', '.json', 'gmail')
-        ss = getAPI('https://www.googleapis.com/auth/spreadsheets', '.json', '.json', 'ss')
-        watchReq = {
-          'labelIds': ['UNREAD'],
-          'topicName': ''
-        }
-        historyId2 = 'updated in conditional statement' #previous int(id['historyId'])
         ssrow = ss.spreadsheets().values().get(spreadsheetId=SPREADSHEET_ID, range='1:1').execute()
         id = Gmail.users().watch(userId='@gmail.com', body=watchReq).execute()
         historyId = int(id['historyId'])
         print(historyId)
+        time.sleep(1)
 
         if historyId != historyId2:
             if 'values' in ssrow:
@@ -94,7 +98,10 @@ def mraapp():
                                 "<b>TIME" + randoEmoji(0) + ": </b>"+ t + "<br>"
                                 "<b>LOCATION" + randoEmoji(2) + ": </b><br><i>https://www.google.com/maps/?q=" + c + "</i><br><br>"
                                 "<b>MESSAGE: </b><i>" + m + "</i>")
-                    sendingMes(multiline)
+                    if msgBod == ssrow['values'][0][6]:
+                        sendingMes(multiline, True)
+                    else:
+                        sendingMes(multiline, False)
 
                     id = Gmail.users().watch(userId='@gmail.com', body=watchReq).execute()
                     historyId = int(id['historyId'])
@@ -102,10 +109,10 @@ def mraapp():
                 ss.spreadsheets().batchUpdate(spreadsheetId=SPREADSHEET_ID, body=BODY).execute()
         #time.sleep(2.5)
 
-def sendingMes(msg):
+def sendingMes(msg, calib):
     cookies = hangups.auth.get_auth_stdin(REFRESH_TOKEN_PATH)
     hclient = hangups.Client(cookies)
-    hclient.on_connect.add_observer(lambda: asyncio.async(send_message(hclient, msg)))
+    hclient.on_connect.add_observer(lambda: asyncio.async(send_message(hclient, msg, calib)))
     loop = asyncio.get_event_loop()
     loop.run_until_complete(hclient.connect())
 
