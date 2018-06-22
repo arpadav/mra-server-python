@@ -20,6 +20,9 @@
 		"hello": {
 			"path": "plugins/hello.py"
 		},
+		"hotline": {
+			"path": "plugins/hotline.py"
+		},
 		"her": {
 			"path": "plugins/her.py"
 		},
@@ -28,9 +31,6 @@
 		},
 		"tragedy": {
 			"path": "plugins/tragedy.py"
-		},
-		"updated": {
-			"path": "plugins/updated.py"
 		},
 		"uptime": {
 			"path": "plugins/uptime.py"
@@ -54,7 +54,7 @@
 				"haines": "Quote from Adam Haines",
 				"hello": "MRA greets you!",
 				"help": "Usage and command list",
-				"updated": "Shows when host has been last updated from GitHub",
+				"hotline": "Thoughts and prayers",
 				"uptime": "Uptime of server"
 			}
 		}
