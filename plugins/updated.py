@@ -2,7 +2,7 @@ import asyncio
 
 import nacre
 
-class AshleySession:
+class UpdatedSession:
 
 	def __init__(self, pearl, config):
 		self.pearl = pearl
@@ -14,7 +14,7 @@ class AshleySession:
 		pass
 
 	def buildHandle(self):
-		messageFilter = nacre.handle.newMessageFilter('^{}+ashley(\s.*)?$'.format(self.pearl.config['format']))
+		messageFilter = nacre.handle.newMessageFilter('^{}+updated(\s.*)?$'.format(self.pearl.config['format']))
 		async def handle(update):
 			if nacre.handle.isMessageEvent(update):
 				event = update.event_notification.event
@@ -23,9 +23,9 @@ class AshleySession:
 		self.pearl.updateEvent.addListener(handle)
 
 	async def respond(self, event):
-		message =  "🔥🔥🔥"
+		message = "Server last updated Saturday, June 21st."
 		conversation = self.hangouts.getConversation(event=event)
 		await self.hangouts.send(message, conversation)
 
 def load(pearl, config):
-	return AshleySession(pearl, config)
+	return UpdatedSession(pearl, config)
