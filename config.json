@@ -5,9 +5,6 @@
 		"8ball": {
 			"path": "plugins/eightball.py"
 		},
-    "ashley": {
-      "path": "plugins/ashley.py"
-    },
 		"begone": {
 			"path": "plugins/begone.py"
 		},
@@ -22,6 +19,9 @@
 		},
 		"hello": {
 			"path": "plugins/hello.py"
+		},
+		"hotline": {
+			"path": "plugins/hotline.py"
 		},
 		"her": {
 			"path": "plugins/her.py"
@@ -48,13 +48,13 @@
 			"path": "plugins/help.py",
 			"commands": {
 				"8ball": "Fortunes and advice",
-        "ashley": "Returns the fire emoji to its rightful owner",
 				"copypastas": "Lists copypasta commands",
 				"git": "Displays link to GitHub",
 				"goodbye": "MRA says goodbye",
 				"haines": "Quote from Adam Haines",
 				"hello": "MRA greets you!",
 				"help": "Usage and command list",
+				"hotline": "Thoughts and prayers",
 				"uptime": "Uptime of server"
 			}
 		}
