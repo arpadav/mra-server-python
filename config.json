@@ -17,11 +17,14 @@
 		"goodbye": {
 			"path": "plugins/goodbye.py"
 		},
+		"haines": {
+			"path": "plugins/haines.py"
+		},
 		"hello": {
 			"path": "plugins/hello.py"
 		},
-		"haines": {
-			"path": "plugins/haines.py"
+		"her": {
+			"path": "plugins/her.py"
 		},
 		"him": {
 			"path": "plugins/him.py"
@@ -36,6 +39,7 @@
 			"path": "plugins/copypastas.py",
 			"commands": {
 				"tragedy": "",
+				"her": "",
 				"him": "",
 				"begone": ""
 			}
@@ -48,9 +52,9 @@
 				"copypastas": "Lists copypasta commands",
 				"git": "Displays link to GitHub",
 				"goodbye": "MRA says goodbye",
+				"haines": "Quote from Adam Haines",
 				"hello": "MRA greets you!",
 				"help": "Usage and command list",
-				"haines": "Quote from Adam Haines",
 				"uptime": "Uptime of server"
 			}
 		}
