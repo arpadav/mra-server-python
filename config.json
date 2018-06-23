@@ -35,6 +35,9 @@
 		"uptime": {
 			"path": "plugins/uptime.py"
 		},
+		"updated": {
+			"path": "plugins/updated.py"
+		},
 		"copypastas": {
 			"path": "plugins/copypastas.py",
 			"commands": {
@@ -55,7 +58,8 @@
 				"hello": "MRA greets you!",
 				"help": "Usage and command list",
 				"hotline": "Thoughts and prayers",
-				"uptime": "Uptime of server"
+				"uptime": "Uptime of server",
+				"updated": "Shows when server was last updated"
 			}
 		}
 	}
