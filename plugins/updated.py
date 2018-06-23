@@ -23,7 +23,7 @@ class UpdatedSession:
 		self.pearl.updateEvent.addListener(handle)
 
 	async def respond(self, event):
-		message = "Server last updated Saturday, June 21st."
+		message = "Server last updated Friday, June 22nd."
 		conversation = self.hangouts.getConversation(event=event)
 		await self.hangouts.send(message, conversation)
 
