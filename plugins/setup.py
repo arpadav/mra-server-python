@@ -24,6 +24,7 @@ class SetupSession:
 		self.pearl.updateEvent.addListener(handle)
 
 	async def respond(self, event):
+		#setup solely for app use
 		message = "conversation_id is " + event.conversation_id.id
 		conversation = self.hangouts.getConversation(event=event)
 		await self.hangouts.send(message, conversation)
