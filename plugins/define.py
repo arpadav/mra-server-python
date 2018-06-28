@@ -43,7 +43,7 @@ class DefineSession:
 				jj = 0
 				ii += 1
 		except:
-			message = "No definitions found for " + input
+			message = "No definitions found for \'" + input + "\'"
 
 		conversation = self.hangouts.getConversation(event=event)
 		await self.hangouts.send(message, conversation)
