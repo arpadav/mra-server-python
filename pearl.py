@@ -4,7 +4,7 @@ import hangups
 import nacre
 
 class Pearl:
-
+	
 	def __init__(self, auth, config):
 		self.auth = auth
 		self.config = config
