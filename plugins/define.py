@@ -32,18 +32,24 @@ class DefineSession:
 		message = ""
 		ii = 0
 		jj = 0
+		indent = ii
+
 		try:
 			for i in r.json()['results'][0]['lexicalEntries']:
 				for j in r.json()['results'][0]['lexicalEntries'][ii]['entries']:
-					if ii == 0 and jj == 0:
-						message = message + str(ii + 1) + "." + str(jj) + ": " + j['senses'][0]['short_definitions'][0]
+					if indent == ii:
+						if ii == 0 and jj == 0:
+							message = message + str(ii + 1) + ". " + j['senses'][0]['short_definitions'][0]
+						else:
+							message = message + "<br>" + str(ii + 1) + "." + str(jj) + ". " + j['senses'][0]['short_definitions'][0]
 					else:
-						message = message + "<br>" + str(ii + 1) + "." + str(jj) + ": " + j['senses'][0]['short_definitions'][0]
+						message = message + "<br><br>" + str(ii + 1) + ". " + j['senses'][0]['short_definitions'][0]
+						indent == ii
 					jj += 1
 				jj = 0
 				ii += 1
 		except:
-			message = "No definitions found for \'" + input + "\'"
+			message = "No definitions found for \'" + input + "\'."
 
 		conversation = self.hangouts.getConversation(event=event)
 		await self.hangouts.send(message, conversation)
