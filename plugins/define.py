@@ -25,7 +25,7 @@ class DefineSession:
 
 	async def respond(self, event):
 		input = event.chat_message.message_content.segment[0].text.split(" ")[1]
-		message = ""
+		message = "definition goes here"
 		conversation = self.hangouts.getConversation(event=event)
 		await self.hangouts.send(message, conversation)
 
