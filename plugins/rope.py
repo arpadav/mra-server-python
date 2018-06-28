@@ -9,7 +9,8 @@ class RopeSession:
 		"killed themselves",
 		"commited suicide",
 		"roped themselves",
-		"ended it"
+		"ended it",
+		"basketball-hooped it"
 	]
 
 	def __init__(self, pearl, config):
