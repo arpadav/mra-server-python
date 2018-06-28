@@ -33,6 +33,7 @@ class EightBallSession:
 	]
 
 	def __init__(self, pearl, config):
+		print("Initializing " + __class__.__name__)
 		self.pearl = pearl
 		self.hangouts = self.pearl.hangouts
 		self.config = config

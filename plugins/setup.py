@@ -2,9 +2,7 @@ import asyncio
 
 import nacre
 
-class HelloSession:
-
-	hello = "Hello {}!"
+class SetupSession:
 
 	def __init__(self, pearl, config):
 		print("Initializing " + __class__.__name__)
@@ -17,7 +15,7 @@ class HelloSession:
 		pass
 
 	def buildHandle(self):
-		messageFilter = nacre.handle.newMessageFilter('^{}+hello(\s.*)?$'.format(self.pearl.config['format']))
+		messageFilter = nacre.handle.newMessageFilter('^{}+setup(\s.*)?$'.format(self.pearl.config['format']))
 		async def handle(update):
 			if nacre.handle.isMessageEvent(update):
 				event = update.event_notification.event
@@ -26,9 +24,9 @@ class HelloSession:
 		self.pearl.updateEvent.addListener(handle)
 
 	async def respond(self, event):
-		message = self.hello.format(self.hangouts.getUser(event=event).first_name)
+		message = "conversation_id is " + event.conversation_id.id
 		conversation = self.hangouts.getConversation(event=event)
 		await self.hangouts.send(message, conversation)
 
 def load(pearl, config):
-	return HelloSession(pearl, config)
+	return SetupSession(pearl, config)
