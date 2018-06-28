@@ -8,6 +8,9 @@
 		"begone": {
 			"path": "plugins/begone.py"
 		},
+		"define": {
+			"path": "plugins/define.py"
+		},
 		"git": {
 			"path": "plugins/git.py"
 		},
@@ -20,14 +23,20 @@
 		"hello": {
 			"path": "plugins/hello.py"
 		},
-		"hotline": {
-			"path": "plugins/hotline.py"
-		},
 		"her": {
 			"path": "plugins/her.py"
 		},
 		"him": {
 			"path": "plugins/him.py"
+		},
+		"hotline": {
+			"path": "plugins/hotline.py"
+		},
+		"rope": {
+			"path": "plugins/rope.py"
+		},
+		"setup": {
+			"path": "plugins/setup.py"
 		},
 		"tragedy": {
 			"path": "plugins/tragedy.py"
@@ -52,14 +61,16 @@
 			"commands": {
 				"8ball": "Fortunes and advice",
 				"copypastas": "Lists copypasta commands",
+				"define": "Defines a word",
 				"git": "Displays link to GitHub",
 				"goodbye": "MRA says goodbye",
 				"haines": "Quote from Adam Haines",
 				"hello": "MRA greets you!",
 				"help": "Usage and command list",
 				"hotline": "Thoughts and prayers",
+				"rope": "Use when you have regrets",
 				"uptime": "Uptime of server",
-				"updated": "Shows when server was last updated"
+				"updated": "When server was last updated"
 			}
 		}
 	}
