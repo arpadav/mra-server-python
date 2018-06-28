@@ -25,7 +25,7 @@ class DefineSession:
 		self.pearl.updateEvent.addListener(handle)
 
 	async def respond(self, event):
-		input = event.chat_message.message_content.segment[0].text.split(" ")[1]
+		input = event.chat_message.message_content.segment[0].text.split("!define ")[1]
 		url = 'https://od-api.oxforddictionaries.com:443/api/v1/entries/' + self.api['lang'] + '/' + input.lower()
 		r = requests.get(url, headers = {'app_id': self.api["app_id"], 'app_key': self.api["app_key"]})
 
@@ -43,7 +43,7 @@ class DefineSession:
 				jj = 0
 				ii += 1
 		except:
-			message = "No definitions found."
+			message = "No definitions found for " + input
 
 		conversation = self.hangouts.getConversation(event=event)
 		await self.hangouts.send(message, conversation)
