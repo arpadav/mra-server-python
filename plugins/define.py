@@ -39,11 +39,11 @@ class DefineSession:
 				for j in r.json()['results'][0]['lexicalEntries'][ii]['entries']:
 					if indent == ii:
 						if ii == 0 and jj == 0:
-							message = message + str(ii + 1) + ". " + j['senses'][0]['short_definitions'][0]
+							message = message + str(ii + 1) + ". " + j['senses'][0]['definitions'][0]
 						else:
-							message = message + "<br>" + str(ii + 1) + "." + str(jj) + ". " + j['senses'][0]['short_definitions'][0]
+							message = message + "<br>" + str(ii + 1) + "." + str(jj) + ". " + j['senses'][0]['definitions'][0]
 					else:
-						message = message + "<br><br>" + str(ii + 1) + ". " + j['senses'][0]['short_definitions'][0]
+						message = message + "<br><br>" + str(ii + 1) + ". " + j['senses'][0]['definitions'][0]
 						indent == ii
 					jj += 1
 				jj = 0
