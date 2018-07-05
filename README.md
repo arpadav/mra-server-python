@@ -25,13 +25,13 @@ You will not be able to run this yourself. Private information (like credentials
 
 * 3. Renaming and replacing:
 
-	After one is duplicated, rename the `.py` file to whatever command you will use. Ex: if you want `!killallhumans`, rename to `killallhumans.py`. And there is a whole lot more renaming to do lol
+	After one is duplicated, rename the `.py` file to whatever command you will use. Ex: if you want `!time`, rename to `time.py`. And there is a whole lot more renaming to do lol
 
 	Inside your new `.py` file, find the following line of code in `def buildHandle(self)`:
 
 	`messageFilter = nacre.handle.newMessageFilter('^{}+COMMAND(\s.*)?$'.format(self.pearl.config['format']))`
 
-	Replace <b>`COMMAND`</b> with your command, so in this example replace with <b>killallhumans</b>. Change the class name from `CommandSession` to `KillAllHumansSession`, and at the bottom replace ` return CommandSession(pearl, config)` with ` return KillAllHumansSession(pearl, config)`
+	Replace <b>`COMMAND`</b> with your command, so in this example replace with <b>time</b>. Change the class name from `CommandSession` to `TimeSession`, and at the bottom replace ` return CommandSession(pearl, config)` with ` return TimeSession(pearl, config)`
 
 
 * 4. Changing message:
@@ -42,7 +42,7 @@ You will not be able to run this yourself. Private information (like credentials
 
 	change what the message is equal to, like in this example:
 
-	`message =`<b>`'I want to kill all humans!'`</b>
+	`message =`<b>`'Time is 12:00 PM'`</b>
 
 	(NOTE: the message string is processed into HTML, so you can add commands like `<br>, <b>, <i>, <u>,` etc. to format the message accordingly)
 
@@ -58,8 +58,8 @@ You will not be able to run this yourself. Private information (like credentials
 	"begone": {
 		"path": "plugins/begone.py"
 	},
-	"killallhumans": {
-		"path": "plugins/killallhumans.py"
+	"time": {
+		"path": "plugins/time.py"
 	}
 }
 ```
